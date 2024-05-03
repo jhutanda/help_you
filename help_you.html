@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help_You</title>
+  </head>
+  <body>
+    <!-- ...  HTML code -->
+    <h1>Help_You</h1>
+    <h2>Climate Change Related News</h2>
+    <label for="number">Please Type Here: </label>
+    <input type="text" id="searchQuery" placeholder="search here..." />
+    <button onclick="helpYou()">Search</button>
+    <div id="result"></div>
+    <hr>
+
+    <!-- css code here -->
+    <style>
+      body {
+        font-size: 20px;
+        margin-top: 50px;
+        align-items: center;
+        text-align: center;
+      }
+      label{
+        font-size: 22px;;
+      }
+      input[type="text"] {
+        padding: 10px;
+        margin: 5px;
+        font-size: 20px;
+        border: 1px solid aqua;
+        border-radius: 10px;
+        width: 250px;
+      }
+      button {
+        background-color: aqua;
+        color: red;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 10px 25px;
+        border-radius: 20px;
+        border: none;
+      }
+      button:hover {
+        background-color: blueviolet;
+        color: aqua;
+      }
+      #result {
+        font-size: 20px;
+        font-weight: bold;
+        color: red;
+        background-color: aqua;
+        margin-top: 20px;
+      }
+      hr{
+        color:azure;    
+      }
+    </style>
+
+    <!-- script code with google API -->
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script type="module">
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+
+      // Fetch your API_KEY
+      const API_KEY = "AIzaSyB1-oElM2HmaakOqI6pDKCHXCM1y4_sN7Q";
+
+      // Access your API key (see "Set up your API key" above)
+      const genAI = new GoogleGenerativeAI(API_KEY);
+
+      // ...
+
+      const model = genAI.getGenerativeModel({ model: "MODEL_NAME" });
+
+      // ...
+    </script>
+  </body>
+</html>
